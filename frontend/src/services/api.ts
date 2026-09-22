@@ -132,3 +132,22 @@ export const usuariosApi = {
   listarPorRol: (rol: Rol) => api.get<Usuario[]>(`/api/usuarios/rol/${rol}`).then((r) => r.data),
   crear: (data: Partial<Usuario>) => api.post<Usuario>("/api/usuarios/", data).then((r) => r.data),
 };
+
+// ---------------------------------------------------------------------------
+// Requerimiento 5 — Reportes y estadísticas
+// ---------------------------------------------------------------------------
+export interface CostoPorMes {
+  mes: number;
+  costo_total: number;
+}
+
+export interface ReporteResumenOut {
+  tickets_por_estado: Record<string, number>;
+  equipo_mas_fallas: { nombre: string; total_tickets: number } | null;
+  tiempo_promedio_resolucion_horas: number | null;
+  costo_repuestos_por_mes: CostoPorMes[];
+}
+
+export const reportesApi = {
+  getResumen: () => api.get<ReporteResumenOut>("/api/reportes/resumen").then((r) => r.data),
+};

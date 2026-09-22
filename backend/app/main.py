@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import models
 from .database import engine
-from .routers import usuarios, equipos, tickets, repuestos, diagnosticos
+from .routers import usuarios, equipos, tickets, repuestos, diagnosticos, reportes
 
 # Crea las tablas en PostgreSQL si aún no existen (para un laboratorio de
 # clase esto es suficiente; en un proyecto productivo se usaría Alembic
@@ -42,6 +42,7 @@ app.include_router(equipos.router)
 app.include_router(tickets.router)
 app.include_router(repuestos.router)
 app.include_router(diagnosticos.router)
+app.include_router(reportes.router)
 
 
 @app.get("/", tags=["Estado del servicio"])

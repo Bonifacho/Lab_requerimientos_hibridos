@@ -158,3 +158,18 @@ class DiagnosticoOut(BaseModel):
     costo_mano_obra: float
     fecha: datetime
     repuestos_usados: List[DiagnosticoRepuestoOut] = []
+
+
+# ---------------------------------------------------------------------------
+# Reportes
+# ---------------------------------------------------------------------------
+class CostoPorMes(BaseModel):
+    mes: int
+    costo_total: float
+
+
+class ReporteResumenOut(BaseModel):
+    tickets_por_estado: dict[str, int]
+    equipo_mas_fallas: Optional[dict[str, str | int]] = None
+    tiempo_promedio_resolucion_horas: Optional[float] = None
+    costo_repuestos_por_mes: List[CostoPorMes]
