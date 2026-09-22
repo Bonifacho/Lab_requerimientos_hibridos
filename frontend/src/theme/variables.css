@@ -1,0 +1,46 @@
+/*
+ * Variables de tema — Identidad institucional Universidad de Cundinamarca
+ * Verde institucional: #1C472E   |  Dorado institucional: #D2AB39
+ */
+:root {
+  --ion-color-primary: #1c472e;
+  --ion-color-primary-rgb: 28, 71, 46;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #193e28;
+  --ion-color-primary-tint: #335942;
+
+  --ion-color-secondary: #d2ab39;
+  --ion-color-secondary-rgb: 210, 171, 57;
+  --ion-color-secondary-contrast: #1c472e;
+  --ion-color-secondary-contrast-rgb: 28, 71, 46;
+  --ion-color-secondary-shade: #b99632;
+  --ion-color-secondary-tint: #d7b34d;
+
+  --ion-color-success: #2e7d32;
+  --ion-color-danger: #c62828;
+  --ion-color-warning: #d2ab39;
+
+  --ion-toolbar-background: #1c472e;
+  --ion-toolbar-color: #ffffff;
+}
+
+.ion-color-institucional {
+  --ion-color-base: var(--ion-color-secondary);
+  --ion-color-contrast: var(--ion-color-secondary-contrast);
+}
+
+/* Encabezado con escudo institucional */
+.encabezado-institucional {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.encabezado-institucional img {
+  height: 30px;
+  width: 30px;
+}
+
+.badge-estado-abierto { --background: #fdecea; --color: #c62828; }
+.badge-estado-en_proceso { --background: #fff4de; --color: #b7902e; }
+.badge-estado-cerrado { --background: #e8f5e9; --color: #1b5e20; }
